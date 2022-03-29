@@ -31,7 +31,7 @@ class HomeView extends GetView<HomeController> {
                   children: [
                     buildHeader(),
                     buildAvailableCars(),
-                    buildUtilitaires(),
+                    //buildUtilitaires(),
                     buildAvailableAuto(),
                     buildAvailableNumero(),
                     //buildTopDeals(),
@@ -353,7 +353,7 @@ class HomeView extends GetView<HomeController> {
         padding: EdgeInsets.only(top: 20, right: 16, left: 16),
         child: Container(
           decoration: BoxDecoration(
-            color: Utilitaire.withRed(12),
+            color:  Colors.green, // Utilitaire.withRed(12),
             borderRadius: BorderRadius.all(
               Radius.circular(15),
             ),

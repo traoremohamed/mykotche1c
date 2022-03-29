@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
       opaqueRoute: Get.isOpaqueRouteDefault,
       popGesture: Get.isPopGestureEnable,
       transitionDuration: Duration(milliseconds: 230),
-      initialBinding: MainBinding(),
+     // initialBinding: MainBinding(),
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
     );

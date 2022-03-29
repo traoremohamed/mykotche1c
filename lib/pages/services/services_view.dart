@@ -8,7 +8,8 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../core.dart';
 
 class ServiceView extends GetView<ServiceController> {
-  final service = Get.arguments as Service;
+
+  final service = Get.arguments as NewService;
 
   @override
   Widget build(BuildContext context) {
@@ -148,7 +149,10 @@ class ServiceView extends GetView<ServiceController> {
     );
   }
 
-  Widget _buildPricePerPeriod(String months, String price, bool selected) {
+  Widget _buildPricePerPeriod(
+      String months,
+      String price,
+      bool selected) {
     return Expanded(
       child: Container(
         height: 95,
@@ -242,7 +246,9 @@ class ServiceView extends GetView<ServiceController> {
     );
   }
 
-  Widget _buildSpecificationCar(String title, String data) {
+  Widget _buildSpecificationCar(
+      String title,
+      String data) {
     return Container(
       width: 300,
       decoration: BoxDecoration(
