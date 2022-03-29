@@ -17,7 +17,7 @@ Widget buildService(Service service, Coderoute coderoute, [int index]) {
     padding: EdgeInsets.all(16),
     margin: EdgeInsets.only(
         right: index != null ? 16 : 0, left: index == 0 ? 16 : 0),
-    width: 220,
+    width: 200,
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
@@ -31,7 +31,7 @@ Widget buildService(Service service, Coderoute coderoute, [int index]) {
               ),
             ),
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+              padding: EdgeInsets.symmetric(horizontal: 2, vertical: 1),
               child: Text(
                 service != null ?
                 service.localisation : "",
@@ -63,7 +63,7 @@ Widget buildService(Service service, Coderoute coderoute, [int index]) {
             ),
           ),
         ),
-        SizedBox(height: 20),
+        SizedBox(height: 10),
         Text(
           service != null ? service.libelleType : "",
           style: TextStyle(fontSize: 18),
@@ -125,7 +125,7 @@ Widget buildUrgencyContact(Numerourgence numUr, [int index]) {
               ),
             ),
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+              padding: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
               child: Text(
                 "",
                 style: TextStyle(
@@ -145,7 +145,7 @@ Widget buildUrgencyContact(Numerourgence numUr, [int index]) {
               tag: numUr.flagNumUrg,
               child:
               Image.asset(
-                "assets/images/cars/mykotche.png",
+                "assets/images/urgence/imageurgence.png",
                 fit: BoxFit.fitWidth,
               ),
             ),
@@ -154,13 +154,13 @@ Widget buildUrgencyContact(Numerourgence numUr, [int index]) {
         SizedBox(height: 20),
         Text(
           numUr.libelleNumUrg,
-          style: TextStyle(fontSize: 14),
+          style: TextStyle(fontSize: 10),
         ),
         SizedBox(height: 8),
         Text(
           numUr.valeurNumUrg,
           style: TextStyle(
-            fontSize: 22,
+            fontSize: 18,
             fontWeight: FontWeight.bold,
             height: 1,
           ),

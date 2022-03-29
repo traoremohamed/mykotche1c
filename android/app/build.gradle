@@ -47,8 +47,8 @@ android {
         applicationId "id.codingyourlife.mykotche"
         minSdkVersion 21
         targetSdkVersion 32
-        versionCode  4 //flutterVersionCode.toInteger()
-        versionName "1.2" //flutterVersionName
+        versionCode  5 //flutterVersionCode.toInteger()
+        versionName "1.3" //flutterVersionName
         multiDexEnabled true
     }
 
