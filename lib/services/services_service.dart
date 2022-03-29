@@ -5,9 +5,9 @@ import 'auth_service.dart';
 
 class ServicesService {
   //var serviceList = <Service>[].obs;
-  List<Service> getServiceList() {
+  List<NewService> getServiceList() {
 
-   /* AuthService sService = AuthService();
+  /*  AuthService sService = AuthService();
 
     sService.service().then((response){
       int statusCode = response.statusCode;
@@ -29,35 +29,35 @@ class ServicesService {
     });*/
 
 
-    /*return <Service>[
-      Service(
+    return <NewService>[
+      NewService(
         nom: "Chez Ali",
         type: "Garage",
         contact: 2580,
         horaires: "24/7",
         images: ["assets/images/cars/mykotche.png"],
       ),
-      Service(
+      NewService(
         nom: "Bossia Garage",
         type: "Garage",
         contact: 3580,
         horaires: "24/7",
         images: ["assets/images/cars/mykotche.png"],
       ),
-      Service(
+      NewService(
         nom: "Shell",
         type: "Station",
         contact: 2200,
         horaires: "24/7",
         images: ["assets/images/cars/mykotche.png"],
       ),
-      Service(
+      NewService(
         nom: "Ivoire Assistance",
         type: "Depannage",
         contact: 3400,
         horaires: "24/6",
         images: ["assets/images/cars/mykotche.png"],
       ),
-    ];*/
+    ];
   }
 }

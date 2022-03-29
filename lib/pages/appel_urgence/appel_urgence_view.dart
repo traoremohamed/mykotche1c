@@ -11,58 +11,7 @@ class AppelUregnceView extends GetView<AppelUregnceController> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Numero d'rgence"),
-        ),
-        body: ListView(
-          padding: EdgeInsets.only(
-            top: 10,
-            left: 16,
-          ),
-          children: <Widget>[
-            Container(
-              width: MediaQuery.of(context).size.width / 2,
-              margin: EdgeInsets.only(bottom: 16),
-              color: Colors.amber[600],
-              child:  Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [Text("Element A"),]
-              ),
-            ),
-            Container(
-              width: MediaQuery.of(context).size.width / 2,
-              margin: EdgeInsets.only(bottom: 16),
-              color: Colors.amber[50],
-              child:  Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [Text("Element A"),]
-              ),
-            ),
-            Container(
-              width: MediaQuery.of(context).size.width / 2,
-              margin: EdgeInsets.only(bottom: 16),
-              color: Colors.amber[500],
-              child:  Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [Text("Element A"),]
-              ),
-            ),
-            Container(
-              width: MediaQuery.of(context).size.width / 2,
-              margin: EdgeInsets.only(bottom: 16),
-              color: Colors.amber[100],
-              child:  Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [Text("Element A"),]
-              ),
-            )
-          ],
-        ),
-      ),
-    );
-    /*return Scaffold(
+    return Scaffold(
       backgroundColor: Colors.grey[100],
       body: SafeArea(
         child: Container(
@@ -72,33 +21,22 @@ class AppelUregnceView extends GetView<AppelUregnceController> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               AppBarWidget(
-                /*title: "Available Cars (" +
-                    ServicesService().getServiceList().toString() +
-                    ")",*/
-                title: "Numero d'urgence",
+
+                title: "Numéro d'urgence",
               ),
               SizedBox(height: 18),
               Expanded(
-                child: GridView.count(
+                child: Obx(()=>GridView.count(
                   physics: BouncingScrollPhysics(),
                   childAspectRatio: 1 / 1.6,
                   crossAxisCount: 2,
                   crossAxisSpacing: 14,
                   mainAxisSpacing: 14,
-                  /*children: CarService().getCarList().map((item) {
-                    return GestureDetector(
-                        onTap: () =>
-                            Get.toNamed(Routes.BOOK_CAR, arguments: item),
-                        child: buildCar(item));
-                  }).toList(),*/
-                  children:
-                  /*ServicesService().getServiceList().map((item) {
-                    return GestureDetector(
-                       /* onTap: () =>
-                            Get.toNamed(Routes.SERVICE, arguments: item),*/
-                        child: buildService(item));
-                  }).toList(),*/
-                ),
+
+                  children: controller.myContacts.map((item) {
+                    return buildUrgencyContact(item);
+                  }).toList(),
+                )),
               ),
             ],
           ),
@@ -116,7 +54,8 @@ class AppelUregnceView extends GetView<AppelUregnceController> {
           ],
         ),
       ),
-    );*/
+    );
+
   }
 
   Widget buildFilterIcon() {

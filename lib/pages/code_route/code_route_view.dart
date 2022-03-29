@@ -28,7 +28,7 @@ class CodeRouteView extends GetView<CodeRouteController> {
               ),
               SizedBox(height: 18),
               Expanded(
-                child: GridView.count(
+                child: Obx(()=>GridView.count(
                   physics: BouncingScrollPhysics(),
                   childAspectRatio: 1 / 1.6,
                   crossAxisCount: 2,
@@ -40,13 +40,13 @@ class CodeRouteView extends GetView<CodeRouteController> {
                             Get.toNamed(Routes.BOOK_CAR, arguments: item),
                         child: buildCar(item));
                   }).toList(),*/
-                  children: ServicesService().getServiceList().map((item) {
+                  children: controller.myCodeRoutes.map((item) {
                     return GestureDetector(
                         onTap: () =>
                             Get.toNamed(Routes.SERVICE, arguments: item),
-                        child: buildService(item));
+                        child: buildService(null ,item));
                   }).toList(),
-                ),
+                )),
               ),
             ],
           ),

@@ -6,7 +6,8 @@ import 'package:line_icons/line_icons.dart';
 import '../../core.dart';
 
 class AvailableCarsView extends GetView<AvailableCarsController> {
-  final filters = FilterService().getFilterList();
+ final filters = FilterService().getFilterList();
+
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class AvailableCarsView extends GetView<AvailableCarsController> {
               ),
               SizedBox(height: 18),
               Expanded(
-                child: GridView.count(
+                child: Obx(()=>GridView.count(
                   physics: BouncingScrollPhysics(),
                   childAspectRatio: 1 / 1.6,
                   crossAxisCount: 2,
@@ -39,13 +40,13 @@ class AvailableCarsView extends GetView<AvailableCarsController> {
                             Get.toNamed(Routes.BOOK_CAR, arguments: item),
                         child: buildCar(item));
                   }).toList(),*/
-                  children: ServicesService().getServiceList().map((item) {
+                  children: controller.myServices.map((item) {
                     return GestureDetector(
                         onTap: () =>
                             Get.toNamed(Routes.SERVICE, arguments: item),
-                        child: buildService(item));
+                        child: buildService(item, null));
                   }).toList(),
-                ),
+                )),
               ),
             ],
           ),

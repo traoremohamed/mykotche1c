@@ -4,7 +4,7 @@ import '../../core.dart';
 
 class SearchController extends GetxController {
   List<Car> cars = [];
-  List<Service> services = [];
+  List<NewService> services = [];
   List<Dealer> dealers = [];
 
   @override

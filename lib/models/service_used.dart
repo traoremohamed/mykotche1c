@@ -19,7 +19,7 @@ class Service {
     this.createdAt,
     this.updatedAt,
     this.libelleType,
-    this.flagTypeService,
+    this.flagTypeService, String type,
   });
 
   String idService;

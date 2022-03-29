@@ -1,9 +1,12 @@
 import 'package:mykotche/core.dart';
 import 'package:flutter/material.dart';
-import 'package:mykotche/models/services.dart';
+import 'package:mykotche/models/coderoute.dart';
+import 'package:mykotche/models/numerourgence.dart';
+import 'package:mykotche/models/service_used.dart';
 import 'package:mykotche/shared/styles/colors.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-Widget buildService(Service service, [int index]) {
+Widget buildService(Service service, Coderoute coderoute, [int index]) {
   return Container(
     decoration: BoxDecoration(
       color: Colors.white,
@@ -30,7 +33,8 @@ Widget buildService(Service service, [int index]) {
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
               child: Text(
-                service.horaires,
+                service != null ?
+                service.localisation : "",
                 style: TextStyle(
                   color: kPrimaryColor,
                   fontSize: 11.7,
@@ -45,9 +49,15 @@ Widget buildService(Service service, [int index]) {
           height: 95,
           child: Center(
             child: Hero(
-              tag: service.type + service.nom,
-              child: Image.asset(
-                service.images[0],
+              tag: service != null ? service.libelleType +
+                  service.libelleService
+                  : coderoute.flagCode,
+              child:
+              service == null ?
+                  Image.network(coderoute.imageCode)
+                  :
+              Image.asset(
+                "assets/images/cars/mykotche.png",
                 fit: BoxFit.fitWidth,
               ),
             ),
@@ -55,30 +65,115 @@ Widget buildService(Service service, [int index]) {
         ),
         SizedBox(height: 20),
         Text(
-          service.type,
+          service != null ? service.libelleType : "",
           style: TextStyle(fontSize: 18),
         ),
         SizedBox(height: 8),
         Text(
-          service.nom,
+          service != null ?
+          service.libelleService : coderoute.libelleCodeRoute,
           style: TextStyle(
             fontSize: 22,
             fontWeight: FontWeight.bold,
             height: 1,
           ),
         ),
-        Text(
-          "per " +
-              (service.horaires == "Daily"
-                  ? "day"
-                  : service.horaires == "Weekly"
-                      ? "week"
-                      : "month"),
-          style: TextStyle(
-            fontSize: 14,
-            color: Colors.grey,
+        Visibility(
+          visible: service != null,
+          child: Text(
+            "per " +
+                ( service != null && service.localisation == "Daily"
+                    ? "day"
+                    :
+                service != null &&  service.localisation == "Weekly"
+                        ? "week"
+                        : "month"),
+            style: TextStyle(
+              fontSize: 14,
+              color: Colors.grey,
+            ),
           ),
         ),
+      ],
+    ),
+  );
+}
+
+Widget buildUrgencyContact(Numerourgence numUr, [int index]) {
+  return Container(
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.all(
+        Radius.circular(15),
+      ),
+    ),
+    padding: EdgeInsets.all(16),
+    margin: EdgeInsets.only(
+        right: index != null ? 16 : 0, left: index == 0 ? 16 : 0),
+    width: 220,
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
+        Align(
+          alignment: Alignment.centerRight,
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.grey,
+              borderRadius: BorderRadius.all(
+                Radius.circular(15),
+              ),
+            ),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+              child: Text(
+                "",
+                style: TextStyle(
+                  color: kPrimaryColor,
+                  fontSize: 11.7,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+        ),
+        SizedBox(height: 10),
+        Container(
+          height: 75,
+          child: Center(
+            child: Hero(
+              tag: numUr.flagNumUrg,
+              child:
+              Image.asset(
+                "assets/images/cars/mykotche.png",
+                fit: BoxFit.fitWidth,
+              ),
+            ),
+          ),
+        ),
+        SizedBox(height: 20),
+        Text(
+          numUr.libelleNumUrg,
+          style: TextStyle(fontSize: 14),
+        ),
+        SizedBox(height: 8),
+        Text(
+          numUr.valeurNumUrg,
+          style: TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
+            height: 1,
+          ),
+        ),
+       ElevatedButton.icon(
+           onPressed: (){
+         launch(('tel://${numUr.valeurNumUrg}'));
+       },
+           icon: Icon(Icons.phone),
+           label: Text("Appeler"),
+       style: ElevatedButton.styleFrom(
+         primary: Colors.green
+       ),)
       ],
     ),
   );
