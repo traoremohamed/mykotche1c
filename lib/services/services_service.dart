@@ -29,7 +29,7 @@ class ServicesService {
     });*/
 
 
-    /*return <Service>[
+    return <Service>[
       Service(
         nom: "Chez Ali",
         type: "Garage",
@@ -58,6 +58,6 @@ class ServicesService {
         horaires: "24/6",
         images: ["assets/images/cars/mykotche.png"],
       ),
-    ];*/
+    ];
   }
 }
