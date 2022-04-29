@@ -31,7 +31,7 @@ class HomeView extends GetView<HomeController> {
                   children: [
                     buildHeader(),
                     buildAvailableCars(),
-                    //buildUtilitaires(),
+                    buildUtilitaires(),
                     buildAvailableAuto(),
                     buildAvailableNumero(),
                     //buildTopDeals(),
