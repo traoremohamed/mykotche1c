@@ -8,6 +8,8 @@ abstract class Routes {
   static const REGISTER = '/register';
   static const FORGET_PASSWORD = '/forget-password';
   static const AVAILABLE_CARS = '/available-cars';
+  static const UTILITIES_CARS = '/utilities-cars';
+  static const DETAILS_UTILITIES_CARS = '/details-utilities-cars';
   static const BOOK_CAR = '/book_car';
   static const NOTIFICATION = '/notification';
   static const SERVICE = '/service';

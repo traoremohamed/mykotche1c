@@ -1,5 +1,10 @@
 class Env {
-  static String _URL_API = "https://kocthe.bononbatp.ci/api/";
+
+  //static String _URL_API = "https://kocthe.bononbatp.ci/api/";
+
+  //static String _URL_API = "http://192.168.159.159:8181/api/";
+
+  static String _URL_API = "https://kotche.bononbtp.com/api/";
 
 
   static String URI_LOGIN = _URL_API + "login";
@@ -23,5 +28,9 @@ class Env {
   static String URI_SERVICE = _URL_API + "servicek";
 
   static String URI_CODE_ROUTE = _URL_API + "coderoute";
+
+  static String URI_UTILITAIRE = _URL_API + "utilitaire"; //GET
+
+  static String URI_UTILITAIRE_DETAIL = _URL_API + "utilitairedetail/"; //GET
 
 }

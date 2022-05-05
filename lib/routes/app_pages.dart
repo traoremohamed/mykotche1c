@@ -4,11 +4,15 @@ import 'package:mykotche/pages/appel_urgence/appel_urgence_binding.dart';
 import 'package:mykotche/pages/appel_urgence/appel_urgence_view.dart';
 import 'package:mykotche/pages/code_route/code_route_binding.dart';
 import 'package:mykotche/pages/code_route/code_route_view.dart';
+import 'package:mykotche/pages/utilities/utilities_cars_binding.dart';
+import 'package:mykotche/pages/utilities/utilities_cars_view.dart';
+import 'package:mykotche/pages/utilities_details/details_utilities_cars_view.dart';
 import 'package:mykotche/pages/vehicule/vehicule_binding.dart';
 import 'package:mykotche/pages/vehicule/vehicule_controller.dart';
 import 'package:mykotche/pages/vehicule/vehicule_view.dart';
 import 'package:get/get.dart';
 import '../core.dart';
+import '../pages/utilities_details/details_utilities_cars_binding.dart';
 
 part 'app_routes.dart';
 
@@ -42,6 +46,16 @@ class AppPages {
       name: Routes.AVAILABLE_CARS,
       page: () => AvailableCarsView(),
       binding: AvailableCarsBinding(),
+    ),
+    GetPage(
+      name: Routes.UTILITIES_CARS,
+      page: () => UtilitiesCarsView(),
+      binding: UtilitiesCarsBinding(),
+    ),
+    GetPage(
+      name: Routes.DETAILS_UTILITIES_CARS,
+      page: () => DetailsUtilitiesCarsView(),
+      binding: DetailsUtilitiesCarsBinding(),
     ),
     GetPage(
       name: Routes.BOOK_CAR,
