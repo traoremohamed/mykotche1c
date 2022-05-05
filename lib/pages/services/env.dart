@@ -29,8 +29,8 @@ class Env {
 
   static String URI_CODE_ROUTE = _URL_API + "coderoute";
 
-  static String URI_UTILITAIRE = _URL_API + "utilitaire";
+  static String URI_UTILITAIRE = _URL_API + "utilitaire"; //GET
 
-  static String URI_UTILITAIRE_DETAIL = _URL_API + "utilitairedetail/";
+  static String URI_UTILITAIRE_DETAIL = _URL_API + "utilitairedetail/"; //GET
 
 }

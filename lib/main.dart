@@ -107,19 +107,21 @@ class SplashScreen extends StatelessWidget {
 class SplashScreenController extends GetxController{
 
 
+  Timer timer;
+
   startTime() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     bool firstTime = prefs.getBool('first_time_in_app');
 
     if (firstTime != null && !firstTime) {
       // Not first time
-      Timer(Duration(seconds: 5), () {
+     timer = new Timer(Duration(seconds: 5), () {
         Get.toNamed("/login");
       });
     } else {
       // First time
       prefs.setBool('first_time_in_app', false);
-      Timer(Duration(seconds: 2), () => Get.toNamed("/login"));
+      timer = new Timer(Duration(seconds: 2), () => Get.toNamed("/login"));
     }
   }
 
@@ -127,5 +129,12 @@ class SplashScreenController extends GetxController{
   void onInit() {
     startTime();
     super.onInit();
+  }
+
+  @override
+  void onClose() {
+    // TODO: implement onClose
+    timer.cancel();
+    super.onClose();
   }
 }

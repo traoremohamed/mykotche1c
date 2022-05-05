@@ -76,7 +76,7 @@ class AppBarWidget extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Colors.black,
-                              fontSize: 27,
+                              fontSize: 25,
                               fontWeight: FontWeight.bold,
                             ),
                           ),

@@ -409,7 +409,7 @@ class HomeView extends GetView<HomeController> {
 
   Widget buildUtilitaires() {
     return GestureDetector(
-      //onTap: () => Get.toNamed(Routes.AVAILABLE_CARS),
+      onTap: () => Get.toNamed(Routes.UTILITIES_CARS),
       child: Padding(
         padding: EdgeInsets.only(top: 20, right: 16, left: 16),
         child: Container(
