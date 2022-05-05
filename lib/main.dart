@@ -61,12 +61,22 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      body: Stack(
+
+        backgroundColor: Colors.white,
+        body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        child: Image.asset("assets/images/cars/presentation.gif",
+        gaplessPlayback: true,
+        fit: BoxFit.fill
+        )
+        )
+      /*body: Stack(
         fit: StackFit.expand,
         alignment: Alignment.center,
         children: <Widget>[
           //Faire un dégradé !
-          Container(
+         /* Container(
             decoration: BoxDecoration(
               color: Colors.blue,
             ),
@@ -75,12 +85,12 @@ class SplashScreen extends StatelessWidget {
             child: Hero(
               tag: 'logo',
               child: Image.asset(
-                'assets/images/cars/mykotche.png',
+                'assets/images/cars/presentation.gif',
                 width: 120,
                 height: 120,
               ),
             ),
-          ),
+          ),*/
 
 
           Positioned(
@@ -98,7 +108,7 @@ class SplashScreen extends StatelessWidget {
             ),
           )
         ],
-      ),
+      ),*/
     );
   }
 }
