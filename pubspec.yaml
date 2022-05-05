@@ -81,6 +81,7 @@ flutter:
     - assets/images/dealers/
     - assets/images/users/
     - assets/images/icons/
+    - assets/images/icons/gif_car.gif
     - assets/images/notifications/
     - assets/images/welcome/
     - assets/images/urgence/

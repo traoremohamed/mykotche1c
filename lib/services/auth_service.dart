@@ -251,4 +251,26 @@ class AuthService {
 
   }
 
+
+  utilitairecar() async{
+
+    try{
+
+      dio = new Dio();
+
+
+      var response = await dio.get(Env.URI_UTILITAIRE);
+
+
+      debugPrint('Data response: ${response.data}');
+
+      return response;
+
+    }on DioError catch(ex){
+      debugPrint("${ex.response.statusCode}");
+      return ex.response;
+    }
+
+  }
+
 }

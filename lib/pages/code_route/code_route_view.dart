@@ -21,9 +21,6 @@ class CodeRouteView extends GetView<CodeRouteController> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               AppBarWidget(
-                /*title: "Available Cars (" +
-                    ServicesService().getServiceList().toString() +
-                    ")",*/
                 title: "Code de la route",
               ),
               SizedBox(height: 18),
@@ -34,12 +31,7 @@ class CodeRouteView extends GetView<CodeRouteController> {
                   crossAxisCount: 2,
                   crossAxisSpacing: 14,
                   mainAxisSpacing: 14,
-                  /*children: CarService().getCarList().map((item) {
-                    return GestureDetector(
-                        onTap: () =>
-                            Get.toNamed(Routes.BOOK_CAR, arguments: item),
-                        child: buildCar(item));
-                  }).toList(),*/
+
                   children: controller.myCodeRoutes.map((item) {
                     return GestureDetector(
                         onTap: () =>
